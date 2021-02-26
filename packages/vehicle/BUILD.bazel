@@ -1,18 +1,30 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@npm_bazel_typescript//:index.bzl", "ts_library")
-load("@npm//typescript:index.bzl", "tsc")
+load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project", "ts_library")
 load("//:jest.bzl", "jest_test")
 
 ts_library(
     name = "vehicle",
     tsconfig = "//:tsconfig.json",
     srcs = glob(
-        ["*.ts", "*.test.ts"]
+        ["vehicle.ts"]
     ),
     deps = [
         "@npm//@types/jest",
         "//packages/color:color"
+    ],
+)
+
+ts_project(
+    name = "ts",
+    declaration = True,
+    tsconfig = "//:tsconfig.json",
+    srcs = glob(
+        ["vehicle.ts"]
+    ),
+    deps = [
+        "@npm//@types/jest",
+        "//packages/color:pkg"
     ],
 )
 

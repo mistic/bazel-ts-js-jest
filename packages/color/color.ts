@@ -23,11 +23,19 @@ export const CRAYOLA_24 = [
   'scarlet',
   'green yellow',
   'indigo',
-  'gray-ish'
+  'gray-ish',
+  'merda',
+  'oi',
+  'oi2',
+  'oi3',
+  'oi4',
+  'oi5',
+  'oi6',
 ];
 
 export class Color {
   static isPrimary(color: string): boolean {
+    console.log('sadsad45678');
     return PRIMARIES.indexOf(color) > -1;
   }
 

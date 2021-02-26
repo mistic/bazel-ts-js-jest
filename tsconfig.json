@@ -2,8 +2,17 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "example_project/*": ["*"]
+      "example_project/*": [
+        "bazel-out/darwin-fastbuild/bin/*",
+        "*",
+      ]
     },
+    "rootDirs": [
+      "bazel-out/darwin-fastbuild/bin",
+      "bazel-out/k8-fastbuild/bin",
+      "bazel/bin",
+      "."
+    ],
     "module": "commonjs",
     // "noImplicitAny": true,
     // "noImplicitThis": true,
@@ -17,7 +26,8 @@
     "jsx": "react",
     // "lib": ["es2017" ,"dom"],
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "declaration": true
   },
   "exclude": ["dist"]
 }

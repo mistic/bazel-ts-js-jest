@@ -1,11 +1,11 @@
-import { Color } from 'example_project/packages/color/color';
+import type { Color } from 'example_project/packages/color/color';
 
 export class Vehicle {
   make: string;
   model: string;
-  color: string
+  color: Color
 
-  constructor(make: string, model: string, color: string = Color.random()) {
+  constructor(make: string, model: string, color: Color) {
       this.make = make;
       this.model = model;
       this.color = color;
